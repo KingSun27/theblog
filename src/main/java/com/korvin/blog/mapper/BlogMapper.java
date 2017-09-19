@@ -11,8 +11,8 @@ import java.util.List;
 @Mapper
 public interface BlogMapper {
 
-    @Select("SELECT * FROM BLOG WHERE ID = ? ")
-    Blog findById(@Param("id") String id);
+    @Select("SELECT * FROM BLOG WHERE ID = #{id} ")
+    Blog findById( Long id);
 
     @Select("SELECT * FROM BLOG  ")
     List<Blog> findAll();

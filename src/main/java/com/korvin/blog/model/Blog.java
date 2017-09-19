@@ -7,7 +7,7 @@ import java.util.Date;
  */
 public class Blog {
 
-    private String id;
+    private Long id;
     private String title;
     private String content;
     private String description;
@@ -56,11 +56,11 @@ public class Blog {
         this.updateTime = updateTime;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

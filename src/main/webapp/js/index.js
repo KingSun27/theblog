@@ -5,11 +5,19 @@ $(function(){
 
     $.ajax({
         type: "GET",
-        url: "/blog/findAll",
+        url: "/blog",
         data: {},
         dataType: "json",
         success: function(data){
-            for (){}
+            var title;
+            var content;
+
+            for(var i = 0; i<data.length;i++){
+                title =  $("<b></b>").text(data[i].title);
+                content =  $("<i></i>").text(data[i].content);
+                $("#text-start").after(title,"<br>",content,"<br>");
+
+            }
         }
     });
 });
