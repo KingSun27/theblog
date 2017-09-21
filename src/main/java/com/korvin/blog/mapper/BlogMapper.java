@@ -1,11 +1,12 @@
 package com.korvin.blog.mapper;
 
-import com.korvin.blog.model.Blog;
+import java.util.List;
+
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
-import java.util.List;
+import com.korvin.blog.model.Blog;
 
 
 @Mapper
@@ -14,6 +15,12 @@ public interface BlogMapper {
     @Select("SELECT * FROM BLOG WHERE ID = #{id} ")
     Blog findById( Long id);
 
-    @Select("SELECT * FROM BLOG  ")
+    @Select("SELECT * FROM BLOG ")
     List<Blog> findAll();
+    
+    @Insert("insert into BLOG(title,content)values( #{title} ,#{content})")
+    int add(Blog blog);
+    
+    @Insert("select max(id) from BLOG ")
+    int getMaxId();
 }

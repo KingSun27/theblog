@@ -24,7 +24,14 @@
 
             <div class="page-header">
                 <h1>
-                    TheBlog <small>blog & plan</small>
+                    TheBlog <small>blog & plan
+                        <ul class="nav navbar-nav navbar-right">
+							<li>
+								 <a href="#" data-toggle="modal" data-target="#writeNewModel">Write New</a>
+							</li>
+						</ul>
+                    </small>  
+                    <h3>         
                 </h1>
             </div>
 
@@ -39,8 +46,44 @@
                     <a href="#">Contract</a>
                 </li>
             </ul>
-
+            
             <span id="text-start">
+               
+			<div class="modal fade" id="writeNewModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title text-center" id="myModalLabel">
+								New Blog
+							</h4>
+						</div>
+						<div class="modal-body">
+												
+						<form id ="newBlogForm" role="form">
+						  <div class="form-group">
+								<!-- <label for="name">title</label>-->						    
+								<input type="text" name = "title" class="form-control" placeholder="title">
+						  </div>
+						  <div class="form-group">
+						    <div class="form-group">
+							    <textarea class="form-control" name = "content" rows="6" placeholder="content"></textarea>
+							  </div>
+						  </div>
+					
+						</form>
+						</div>
+						<div class="modal-footer ">
+							<button type="button" id = "pushNewBlog" class="btn btn-primary ">
+								Push
+							</button>
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal -->
+			</div>
+         
 
         </div>
     </div>

@@ -7,3 +7,4 @@ CREATE TABLE `blog` (
   `update_time` timestamp(6) NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

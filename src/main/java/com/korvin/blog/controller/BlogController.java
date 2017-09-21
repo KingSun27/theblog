@@ -2,6 +2,8 @@ package com.korvin.blog.controller;
 
 import com.korvin.blog.mapper.BlogMapper;
 import com.korvin.blog.model.Blog;
+import com.korvin.blog.service.BlogService;
+
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,17 +20,23 @@ import java.util.List;
 public class BlogController {
 
     @Autowired
-    private BlogMapper blogMapper;
+    private BlogService blogService;
 
     @RequestMapping(method= RequestMethod.GET)
     @ResponseBody
     List<Blog> get() {
-        return blogMapper.findAll();
+        return blogService.findAll();
     }
 
     @RequestMapping(method = RequestMethod.GET,value = "/{id}")
     @ResponseBody
     Blog findById(@PathVariable Long id) {
-        return blogMapper.findById(id);
+        return blogService.findById(id);
+    }
+    
+    @RequestMapping(method= RequestMethod.POST)
+    @ResponseBody
+    int post(Blog blog) {
+        return blogService.add(blog);
     }
 }
