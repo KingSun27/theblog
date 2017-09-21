@@ -32,7 +32,11 @@ $("#pushNewBlog").click(function(){
 	        dataType: "json",
 	        success: function(data){
 	        	$('#writeNewModel').modal('hide')
+	        },
+	        error: function(data){
+	        	$("#error").alert()
 
 	        }
+	 
 	    });
 });
