@@ -1,18 +1,18 @@
 package com.korvin.blog.controller;
 
-import com.korvin.blog.mapper.BlogMapper;
-import com.korvin.blog.model.Blog;
-import com.korvin.blog.service.BlogService;
+import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.List;
+import com.korvin.blog.model.Blog;
+import com.korvin.blog.service.BlogService;
 
 @Controller
 @RequestMapping("/blog")
@@ -36,7 +36,7 @@ public class BlogController {
     
     @RequestMapping(method= RequestMethod.POST)
     @ResponseBody
-    int post(Blog blog) {
+    int post(@Valid Blog blog) {
         return blogService.add(blog);
     }
 }

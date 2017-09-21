@@ -2,13 +2,21 @@ package com.korvin.blog.model;
 
 import java.util.Date;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
+
 /**
  * Created by yangjin on 17/09/2017.
  */
 public class Blog {
 
     private Long id;
+    @NotBlank
+    @Size(max = 45) 
     private String title;
+    @NotBlank
+    @Size(max = 4000) 
     private String content;
     private String description;
     private Date createTime;
