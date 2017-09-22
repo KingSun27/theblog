@@ -24,7 +24,7 @@ public class BlogController {
 
     @RequestMapping(method= RequestMethod.GET)
     @ResponseBody
-    List<Blog> get() {
+    List<Blog> findAll() {
         return blogService.findAll();
     }
 
@@ -32,6 +32,18 @@ public class BlogController {
     @ResponseBody
     Blog findById(@PathVariable Long id) {
         return blogService.findById(id);
+    }
+    
+    @RequestMapping(method = RequestMethod.DELETE,value = "/{id}")
+    @ResponseBody
+    int delete(@PathVariable Long id) {
+        return blogService.delete(id);
+    }    
+    
+    @RequestMapping(method = RequestMethod.PUT)
+    @ResponseBody
+    int findById(@Valid Blog blog) {
+        return blogService.update(blog);
     }
     
     @RequestMapping(method= RequestMethod.POST)
