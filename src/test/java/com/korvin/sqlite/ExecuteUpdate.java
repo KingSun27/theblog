@@ -17,8 +17,8 @@ public class ExecuteUpdate {
 
 	      stmt = c.createStatement();
 	      String sql;
-	      sql = "drop table blog" ;
-		  stmt.executeUpdate(sql);
+	     // sql = "drop table blog" ;
+		 // stmt.executeUpdate(sql);
 	      
 	      sql = "CREATE TABLE `blog` (\r\n" + 
 	      		"  `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ,\r\n" + 
