@@ -5,7 +5,7 @@ $(function(){
 
     $.ajax({
         type: "GET",
-        url: "/blog",
+        url: "/theBlog/blog",
         data: {},
         dataType: "json",
         success: function(data){
@@ -27,7 +27,7 @@ $(function(){
 $("#pushNewBlog").click(function(){
 	 $.ajax({
 	        type: "POST",
-	        url: "/blog",
+	        url: "/theBlog/blog",
 	        data: $('#newBlogForm').serialize(),
 	        dataType: "json",
 	        success: function(data){

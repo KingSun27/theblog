@@ -12,7 +12,7 @@ public class SecurityFilter {
 	
 	
 	// shiro过滤器
-	@Bean
+//	@Bean
 	public FilterRegistrationBean filterRegistrationBean() {
 		FilterRegistrationBean bean = new FilterRegistrationBean();
 		ShiroFilter filter = new ShiroFilter();
