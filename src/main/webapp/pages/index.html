@@ -1,100 +1,103 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>TheBlog - index</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>TheBlog - index</title>
 
-    <!-- Bootstrap -->
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap -->
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
     <!--<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>-->
-    <!--<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>-->
-    <![endif]-->
+<!--<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>-->
+<![endif]-->
 </head>
 <body>
-<div class="container">
-    <div class="row clearfix">
-        <div class="col-md-12 column">
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
 
-            <div class="page-header">
-                <h1>
-                    TheBlog <small>blog & plan
-                        <ul class="nav navbar-nav navbar-right">
-							<li>
-								 <a href="#" data-toggle="modal" data-target="#writeNewModel">Write New</a>
-							</li>
-						</ul>
-                    </small>  
-                    <h3>         
-                </h1>
-            </div>
+				<div class="page-header">
+					<h1>
+						TheBlog <small>blog & plan
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="#" data-target="#writeNewModel">Write</a></li>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown"> U <b class="caret"></b>
+								</a>
+									<ul class="dropdown-menu">
+										<li><a href="#">个人信息</a></li>
+										<li><a href="#">消息</a></li>
+										<li class="divider"></li>
+										<li><a href="/theBlog/auth/logout">退出登陆</a></li>
+									</ul></li>
+							</ul>
+						</small>
+						<h3>
+					</h1>
+				</div>
 
-            <ul class="breadcrumb">
-                <li class="active">
-                    Blog
-                </li>
-                <li>
-                    <a href="/pages/plan.html">Plan</a>
-                </li>
-                <li>
-                    <a href="#">Contract</a>
-                </li>
-            </ul>
-            
-            <span id="text-start"></span>
-               
-            <!-- 写入博客的弹窗 -->
-			<div class="modal fade" id="writeNewModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-								&times;
-							</button>
-							<h4 class="modal-title text-center" id="myModalLabel">
-								New Blog
-							</h4>
+				<ul class="breadcrumb">
+					<li class="active">Blog</li>
+					<li><a href="/pages/plan.html">Plan</a></li>
+					<li><a href="#">Contract</a></li>
+				</ul>
+
+				<span id="text-start"></span>
+
+				<!-- 写入博客的弹窗 -->
+				<div class="modal fade" id="writeNewModel" tabindex="-1"
+					role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"
+									aria-hidden="true">&times;</button>
+								<h4 class="modal-title text-center" id="myModalLabel">New
+									Blog</h4>
+							</div>
+							<div class="modal-body">
+
+								<form id="newBlogForm" role="form">
+									<div class="form-group">
+										<!-- <label for="name">title</label>-->
+										<input type="text" name="title" class="form-control"
+											placeholder="title">
+									</div>
+									<div class="form-group">
+										<div class="form-group">
+											<textarea class="form-control" name="content" rows="6"
+												placeholder="content"></textarea>
+										</div>
+									</div>
+
+								</form>
+							</div>
+							<div class="modal-footer ">
+								<button type="button" id="pushNewBlog" class="btn btn-primary ">
+									Push</button>
+							</div>
 						</div>
-						<div class="modal-body">
-												
-						<form id ="newBlogForm" role="form">
-						  <div class="form-group">
-								<!-- <label for="name">title</label>-->						    
-								<input type="text" name = "title" class="form-control" placeholder="title">
-						  </div>
-						  <div class="form-group">
-						    <div class="form-group">
-							    <textarea class="form-control" name = "content" rows="6" placeholder="content"></textarea>
-							  </div>
-						  </div>
-					
-						</form>
-						</div>
-						<div class="modal-footer ">
-							<button type="button" id = "pushNewBlog" class="btn btn-primary ">
-								Push
-							</button>
-						</div>
-					</div><!-- /.modal-content -->
-				</div><!-- /.modal -->
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal -->
+				</div>
 			</div>
-        </div>
-    </div>
-</div>
+		</div>
+	</div>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../assets/js/jquery.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../assets/js/bootstrap.js"></script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../assets/js/jquery.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../assets/js/bootstrap.js"></script>
+	；
 
-
-<script src="../js/index.js"></script>
+	<script src="../js/index.js"></script>
 
 </body>
 </html>

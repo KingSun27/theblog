@@ -55,6 +55,7 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/assets/**", "anon");
         filterChainDefinitionMap.put("/auth/**", "anon");
         filterChainDefinitionMap.put("/pages/login.html", "anon");
+
         filterChainDefinitionMap.put("/pages/403.html", "anon");
 
         filterChainDefinitionMap.put("/**", "authc");
