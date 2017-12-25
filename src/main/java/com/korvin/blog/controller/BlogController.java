@@ -16,25 +16,24 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.korvin.blog.model.Blog;
 import com.korvin.blog.service.BlogService;
+import com.korvin.common.Config;
 
 @Controller
 @RequestMapping("/blog")
-
 public class BlogController {
 	private static final Logger log = LoggerFactory.getLogger(BlogController.class);
 
     @Autowired
     private BlogService blogService;
-
+	
     @RequestMapping(method= RequestMethod.GET)
     @ResponseBody
     @Cacheable("blogs")
     List<Blog> findAll() {
     	try {
     		log.info("正在寻找blogs——");
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         return blogService.findAll();
