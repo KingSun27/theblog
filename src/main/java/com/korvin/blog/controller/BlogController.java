@@ -4,7 +4,10 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,13 +21,22 @@ import com.korvin.blog.service.BlogService;
 @RequestMapping("/blog")
 
 public class BlogController {
+	private static final Logger log = LoggerFactory.getLogger(BlogController.class);
 
     @Autowired
     private BlogService blogService;
 
     @RequestMapping(method= RequestMethod.GET)
     @ResponseBody
+    @Cacheable("blogs")
     List<Blog> findAll() {
+    	try {
+    		log.info("正在寻找blogs——");
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         return blogService.findAll();
     }
 
@@ -42,7 +54,7 @@ public class BlogController {
     
     @RequestMapping(method = RequestMethod.PUT)
     @ResponseBody
-    int findById(@Valid Blog blog) {
+    int update(@Valid Blog blog) {
         return blogService.update(blog);
     }
     
