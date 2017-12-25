@@ -1,0 +1,6 @@
+  |\_/|        ****************************    (\_/)
+ / @ @ \       *  "Purrrfectly pleasant"  *   (='.'=)
+( > º < )      *       Poppy Prinz        *   (")_(")
+ `>>x<<´       *   (XXX@example.com)      *
+ /  O  \       ****************************
+ :: Spring Boot ::        (v1.5.6.RELEASE)
