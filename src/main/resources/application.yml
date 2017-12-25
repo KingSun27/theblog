@@ -1,0 +1,24 @@
+server:
+    port: 8080
+    contextPath: /theBlog
+
+shiro:
+    loginUrl: /pages/login.html
+spring:
+    banner: 
+      image: 
+        location: "C:\\Users\\Korvin\\Pictures\\Camera Roll\\timg.jpg"
+    jackson:
+        serialization:
+            FAIL_ON_EMPTY_BEANS: false 
+    #main:
+        #banner-mode: "off"
+    mvc:
+        view:
+            suffix: .html
+    datasource:
+        url: jdbc:sqlite:example.db
+        #url: jdbc:mysql://localhost:3306/theblog?useSSL=false
+        #username: root
+        #password:
+
